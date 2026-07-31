@@ -127,10 +127,9 @@ body.started .fab{opacity:1;pointer-events:auto;transition:opacity .6s .8s,trans
   display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:.15em}
 .hero h1 .amp{font-style:italic;font-size:.5em;display:block;line-height:1.5;color:var(--rose);
   -webkit-text-fill-color:var(--rose);flex-basis:100%;text-align:center}
-#n1,#n2{white-space:nowrap}
-.hero h1 .ch{display:inline-block;opacity:0;transform:translateY(.5em);
-  animation:chIn .6s cubic-bezier(.2,.8,.2,1) forwards}
-@keyframes chIn{to{opacity:1;transform:none}}
+#n1,#n2{display:inline-block;opacity:0;transform:translateY(12px);transition:opacity .8s ease,transform .8s ease}
+body.started #n1{opacity:1;transform:none;transition-delay:.4s}
+body.started #n2{opacity:1;transform:none;transition-delay:.65s}
 .hero .date{font-size:.94rem;letter-spacing:.24em;color:var(--ivory-2);margin-top:.7rem}
 .hero .venue-line{color:var(--gold);font-size:.82rem;letter-spacing:.12em;margin-top:.25rem}
 
@@ -333,6 +332,7 @@ footer{background:var(--night);color:rgba(250,247,240,.5);text-align:center;font
   .diya,.gold-text,.ribbon .track,.openBtn::after,.skyline .w,.mono .star,
   #musicBtn.playing svg,.mono .ring,.mono .orbit,.mono text,#gate .gt,#gate .gs,.openBtn{animation:none!important;opacity:1;stroke-dashoffset:0}
   .hero h1 .ch{opacity:1;transform:none;animation:none}
+  #n1,#n2{opacity:1;transform:none;transition:none}
   .arch{opacity:1;transform:none;transition:none}
   #veil{transition:none}
   html{scroll-behavior:auto}
@@ -576,10 +576,7 @@ const CLD="https://res.cloudinary.com/jwzm0f1g/image/upload/";
 const IMG=(f,full)=>full?f:CLD+"f_auto,q_auto,w_700/"+f;
 
 /* ---------- letters ---------- */
-["n1","n2"].forEach((id,k)=>{
-  const el=$(id);
-  el.innerHTML=[...el.textContent].map((c,i)=>`<span class="ch" style="animation-delay:${.5+k*.55+i*.08}s">${c}</span>`).join("");
-});
+/* names shown as plain text — fade in triggered on gate open */
 
 /* ---------- calendar ---------- */
 function gcalDate(d){return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+"T"+pad(d.getUTCHours())+pad(d.getUTCMinutes())+"00Z"}
