@@ -129,8 +129,7 @@ body.started .fab{opacity:1;pointer-events:auto;transition:opacity .6s .8s,trans
   -webkit-text-fill-color:var(--rose);flex-basis:100%;text-align:center}
 #n1,#n2{white-space:nowrap}
 .hero h1 .ch{display:inline-block;opacity:0;transform:translateY(.5em);
-  animation:chIn .8s cubic-bezier(.2,.8,.2,1) 3s forwards;animation-play-state:paused}
-body.started .hero h1 .ch{animation-play-state:running}
+  animation:chIn .6s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes chIn{to{opacity:1;transform:none}}
 .hero .date{font-size:.94rem;letter-spacing:.24em;color:var(--ivory-2);margin-top:.7rem}
 .hero .venue-line{color:var(--gold);font-size:.82rem;letter-spacing:.12em;margin-top:.25rem}
@@ -559,7 +558,7 @@ $("ribbonTrack").innerHTML=(seg.repeat(4))+(seg.repeat(4));
    The countdown targets the first event in this list that
    hasn't finished, so it counts to the Chennai wedding. ---------- */
 const EVENTS=[
-  {id:"wedding-chn",tag:"The big day",name:"Wedding Ceremony",start:"2026-08-30T16:30:00+05:30",durH:1,dayLabel:"Sunday 30 Aug",timeLabel:"4:30 – 5:30 PM",venue:"The Royal Ballroom, Radisson Blu",city:"Airport Road, Chennai",map:"https://maps.app.goo.gl/Nr1wU7nUntdMK7m86"},
+  {id:"wedding-chn",tag:"The big day",name:"Wedding Ceremony",start:"2026-08-30T16:30:00+05:30",durH:1,dayLabel:"Sunday 30 Aug",timeLabel:"4:30 – 5:30 PM",venue:"Rooftop, Radisson Blu",city:"Airport Road, Chennai",map:"https://maps.app.goo.gl/Nr1wU7nUntdMK7m86"},
   {id:"reception-chn",tag:"Reception",name:"Wedding Reception",start:"2026-08-30T18:30:00+05:30",durH:4,dayLabel:"Sunday 30 Aug",timeLabel:"6:30 PM onwards",venue:"The Royal Ballroom, Radisson Blu",city:"Airport Road, Chennai",map:"https://maps.app.goo.gl/Nr1wU7nUntdMK7m86"},
   {id:"sangeeth",tag:"Pre-wedding",name:"Sangeeth Night",start:"2026-08-21T18:00:00+05:30",durH:4,dayLabel:"Friday 21 Aug",timeLabel:"6:00 PM",venue:"",city:"Calicut, Kerala",map:"https://maps.app.goo.gl/Y13o2yBMM8ZGbjmLA"},
   {id:"haldi",tag:"Pre-wedding",name:"Haldi Ceremony",start:"2026-08-21T10:00:00+05:30",durH:2,dayLabel:"Friday 21 Aug",timeLabel:"10:00 AM",venue:"",city:"Calicut, Kerala",map:"https://maps.app.goo.gl/Y13o2yBMM8ZGbjmLA"},
